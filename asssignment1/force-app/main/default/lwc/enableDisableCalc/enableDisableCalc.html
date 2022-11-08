@@ -1,0 +1,47 @@
+<template>
+	<p>The layout items extend vertically to fill the container.</p>
+	<div class="c-container">
+		<lightning-layout vertical-align="space" multiple-rows="true" class="x-large">
+			<lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+				<lightning-card title="ADD">
+					<lightning-button label="ADD" slot="actions" onclick={add}></lightning-button>
+					<template if:true={isShowAdd}>
+						<c-child-calc></c-child-calc>
+					</template>
+					<p slot="footer">Card Footer</p>
+				</lightning-card>
+			</lightning-layout-item>
+			<lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+				<lightning-card title="SHOW SUB">
+					<lightning-button label="SUB" slot="actions" onclick={sub}></lightning-button>
+					<template if:true={isShowSub}>
+                        <c-substractchild></c-substractchild>
+
+					</template>
+					<p slot="footer">Card Footer</p>
+				</lightning-card>
+			</lightning-layout-item>
+			<lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+				<lightning-card title="SHOW MUL">
+					<lightning-button label="MUL" slot="actions" onclick={mul}></lightning-button>
+					<template if:true={isShowMul}>
+                        <c-multiplicationchild></c-multiplicationchild>
+
+					</template>
+
+					<p slot="footer">Card Footer</p>
+				</lightning-card>
+			</lightning-layout-item>
+			<lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+				<lightning-card title="SHOW DIV">
+					<lightning-button label="DIV" slot="actions" onclick={div}></lightning-button>
+					<template if:true={isShowDiv}>
+                        <c-divisionchild></c-divisionchild>
+
+					</template>
+					<p slot="footer">Card Footer</p>
+				</lightning-card>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+</template>
